@@ -11,9 +11,8 @@ import * as Reselect from "reselect";
 import App from "./App";
 
 const dependencies = {
-  "@capacitor/core": CapacitorCore,
-  "@ionic/react": IonicReact,
-  "@ionic/react-router": IonicReactRouter,
+  "@capacitor": { core: CapacitorCore },
+  "@ionic": { react: IonicReact, "react-router": IonicReactRouter },
   ionicons: IonIcons,
   react: React,
   "react-dom": ReactDOM,
