@@ -13,7 +13,7 @@ import App from "./App";
 const dependencies = {
   "@capacitor": { core: CapacitorCore },
   "@ionic": { react: IonicReact, "react-router": IonicReactRouter },
-  ionicons: IonIcons,
+  ionicons: { icons: IonIcons },
   react: React,
   "react-dom": ReactDOM,
   "react-router": ReactRouter,
