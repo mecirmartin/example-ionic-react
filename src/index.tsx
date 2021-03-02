@@ -7,12 +7,17 @@ import * as IonIcons from "ionicons";
 import * as ReactRouter from "react-router";
 import * as ReactRouterDom from "react-router-dom";
 import * as Reselect from "reselect";
+import * as IonicCore from "@ionic/core";
 
 import App from "./App";
 
 const dependencies = {
   "@capacitor": { core: CapacitorCore },
-  "@ionic": { react: IonicReact, "react-router": IonicReactRouter },
+  "@ionic": {
+    react: IonicReact,
+    "react-router": IonicReactRouter,
+    core: IonicCore,
+  },
   ionicons: { icons: IonIcons },
   react: React,
   "react-dom": ReactDOM,
