@@ -31,6 +31,7 @@ import * as selectors from "../data/selectors";
 import { connect } from "../data/connect";
 import { setSearchText } from "../data/sessions/sessions.actions";
 import { Schedule } from "../models/Schedule";
+import { useIntl } from 'react-intl';
 
 interface OwnProps {}
 
@@ -61,13 +62,17 @@ const SchedulePage: React.FC<SchedulePageProps> = ({
   const pageRef = useRef<HTMLElement>(null);
 
   const ios = mode === "ios";
-
+  
+  
   const doRefresh = () => {
     setTimeout(() => {
       ionRefresherRef.current!.complete();
       setShowCompleteToast(true);
     }, 2500);
   };
+  
+  const intl = useIntl();
+  
 
   return (
     <IonPage ref={pageRef} id="schedule-page">
@@ -121,8 +126,8 @@ const SchedulePage: React.FC<SchedulePageProps> = ({
               value={segment}
               onIonChange={(e) => setSegment(e.detail.value as any)}
             >
-              <IonSegmentButton value="all">All</IonSegmentButton>
-              <IonSegmentButton value="favorites">Favorites</IonSegmentButton>
+              <IonSegmentButton value="all">{intl.formatMessage({id: "schedule.all"})}</IonSegmentButton>
+              <IonSegmentButton value="favorites">{intl.formatMessage({id: "schedule.favorites"})}</IonSegmentButton>
             </IonSegment>
           </IonToolbar>
         )}

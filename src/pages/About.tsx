@@ -20,11 +20,12 @@ import "./About.css";
 import { ellipsisHorizontal, ellipsisVertical } from "ionicons/icons";
 import AboutPopover from "../components/AboutPopover";
 
+
 interface AboutProps {}
 
 const About: React.FC<AboutProps> = () => {
   const [showPopover, setShowPopover] = useState(false);
-  const [popoverEvent, setPopoverEvent] = useState();
+  const [popoverEvent, setPopoverEvent] = useState<any>();
   const [location, setLocation] = useState<
     "madison" | "austin" | "chicago" | "seattle"
   >("madison");

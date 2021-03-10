@@ -2,6 +2,8 @@ import React, { useEffect } from 'react';
 import { Route } from 'react-router-dom';
 import { IonApp, IonRouterOutlet, IonSplitPane } from '@ionic/react';
 import { IonReactRouter } from '@ionic/react-router';
+import { IntlProvider } from 'react-intl';
+
 
 import Menu from './components/Menu';
 
@@ -37,11 +39,24 @@ import HomeOrTutorial from './components/HomeOrTutorial';
 import { Schedule } from "./models/Schedule";
 import RedirectToLogin from './components/RedirectToLogin';
 
-const App: React.FC = () => {
+
+interface Message{
+  [key: string]: any;
+}
+
+type AppProps = {
+  locale: string,
+  messages: Message
+}
+
+
+const App: React.FC<AppProps> = ({ locale, messages }) => {
   return (
-    <AppContextProvider>
-      <IonicAppConnected />
-    </AppContextProvider>
+    <IntlProvider locale={locale} messages={messages}>
+      <AppContextProvider>
+        <IonicAppConnected />
+      </AppContextProvider>
+    </IntlProvider>
   );
 };
 
@@ -100,6 +115,7 @@ const IonicApp: React.FC<IonicAppProps> = ({ darkMode, schedule, setIsLoggedIn, 
       )
   )
 }
+
 
 export default App;
 
