@@ -1,4 +1,5 @@
 {
     "schedule.all": "All",
-    "schedule.favorites" : "Favorites"
+    "schedule.favorites" : "Favorites",
+    "account.changeusername.placeholder": "Select username"
 }

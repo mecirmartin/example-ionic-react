@@ -15,6 +15,7 @@ import "./Account.css";
 import { setUsername } from "../data/user/user.actions";
 import { connect } from "../data/connect";
 import { RouteComponentProps } from "react-router";
+import { useIntl } from "react-intl";
 
 interface OwnProps extends RouteComponentProps {}
 
@@ -34,6 +35,8 @@ const Account: React.FC<AccountProps> = ({ setUsername, username }) => {
   const clicked = (text: string) => {
     console.log(`Clicked ${text}`);
   };
+
+  const intl = useIntl()
 
   return (
     <IonPage id="account-page">
@@ -90,7 +93,7 @@ const Account: React.FC<AccountProps> = ({ setUsername, username }) => {
             type: "text",
             name: "username",
             value: username,
-            placeholder: "username",
+            placeholder: intl.formatMessage({id: "account.changeusername.placeholder"}),
           },
         ]}
         onDidDismiss={() => setShowAlert(false)}

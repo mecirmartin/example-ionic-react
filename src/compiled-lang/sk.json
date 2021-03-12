@@ -1,4 +1,5 @@
 {
    "schedule.all": "Všetko",
-   "schedule.favorites" : "Obľúbené"
+   "schedule.favorites" : "Obľúbené",
+   "account.changeusername.placeholder": "Zadajte meno"
 }
